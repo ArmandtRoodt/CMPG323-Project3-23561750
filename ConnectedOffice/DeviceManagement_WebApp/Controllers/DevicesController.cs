@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
 using DeviceManagement_WebApp.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DeviceManagement_WebApp.Controllers
 {
@@ -19,7 +20,7 @@ namespace DeviceManagement_WebApp.Controllers
         {
             this.devicesRepository = devicesRepository;
         }
-
+        [Authorize]
         // GET: Devices
         public async Task<IActionResult> Index()
         {
