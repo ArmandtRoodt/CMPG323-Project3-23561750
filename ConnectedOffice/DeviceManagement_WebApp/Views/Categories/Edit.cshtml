@@ -1,11 +1,12 @@
 ﻿@model DeviceManagement_WebApp.Models.Category
 
 @{
-    ViewData["Title"] = "Edit Category";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Edit Category</h1>
+<h1>Edit</h1>
 
+<h4>Category</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,7 +23,7 @@
                 <input asp-for="CategoryDescription" class="form-control" />
                 <span asp-validation-for="CategoryDescription" class="text-danger"></span>
             </div>
-            <div class="form-group" hidden>
+            <div class="form-group">
                 <label asp-for="DateCreated" class="control-label"></label>
                 <input asp-for="DateCreated" class="form-control" />
                 <span asp-validation-for="DateCreated" class="text-danger"></span>
