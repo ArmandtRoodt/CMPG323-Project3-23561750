@@ -9,19 +9,22 @@ using DeviceManagement_WebApp.Data;
 using DeviceManagement_WebApp.Models;
 using DeviceManagement_WebApp.Repository;
 using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DeviceManagement_WebApp.Controllers
 {
     public class CategoriesController : Controller
     {
+        
         private readonly ICategoriesRepository categoriesRepository;
-
+        
         public CategoriesController(ICategoriesRepository categoriesRepository)
         {
             this.categoriesRepository = categoriesRepository;
         }
 
         // GET: Categories
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(categoriesRepository.GetAll());
